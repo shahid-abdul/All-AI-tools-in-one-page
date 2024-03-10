@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    {% if websites is empty %}
+        <p>No websites found matching your search.</p>
+    {% else %}
+        <ul>
+            {% for website in websites %}
+                <li><a href="{{ website[1] }}">{{ website[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
+

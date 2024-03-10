@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <h1>My Website</h1>
+
+    <a href="intent://youtube.com/#Intent;scheme=youtube;package=com.google.android.youtube;end">
+        <img src="{{ url_for('static', filename='youtube_icon.png') }}" alt="YouTube Icon">
+    </a>
+    <script>
+        const youtubeLink = document.querySelector('a');
+        youtubeLink.addEventListener('click', (event) => {
+            setTimeout(() => {
+                if (!document.hidden) {
+                    window.location.href = "https://www.youtube.com/";
+                }
+            }, 1000);
+        });
+    </script>
+
+    <h2>Visit these Websites</h2>
+    <ul>
+        <li><a href="https://www.google.com/">Google</a></li>
+        <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
+        <li><a href="https://www.facebook.com/">Facebook</a></li>
+    </ul>
+
+    <h2>Search Websites</h2>
+    <form action="/search" method="post">
+        <input type="text" name="query" placeholder="Search Websites">
+        <button type="submit">Search</button>
+    </form>
+
+</body>
+</html>
